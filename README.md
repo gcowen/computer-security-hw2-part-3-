@@ -1,6 +1,6 @@
 # computer-security-hw2-part-3-
 ## Q1:
-This code firstly initiate a array {3,5,0}. Then compute array[0]*array[1] which is 3*5;<br> 
+This code firstly initiate a array {3,5,0}. Then compute array[0]`*`array[1] which is 3`*`5;<br> 
 
 And shift the number array[0] to right with 31 bits by shr. Only the sign bit will be lefted. For 3, the sign bit is 0. <br>
 
