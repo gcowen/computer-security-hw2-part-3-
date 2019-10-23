@@ -24,6 +24,6 @@ Firstly, compute the first element, the number at [esp+18h] is the counter from 
 Secondly, compute the second element, the number will be store at [esp+14h]. It is compute as: the number at [esp+18h]*-100, then plus the counter which go through between 100 to 999.Then this number will divided by 10. Let counter= i, then  [esp+14h]=([esp+18h]`*`(-100)+i)/10.
  The trick is: a/10 =(a*0x66666667)>>34，note that 2^34*10=0x66666667. Only need to shift 2  bit to right at top 32 bits.
 
-Thirdly, compute the thired element, the number will be store at [esp+10h].The number can be expressed as: i - (((i / 10) * 4 + (i / 10)) * 2),in order to compute i%10. Again, i/10 is using the same technique as second number.
+Thirdly, compute the third element, the number will be store at [esp+10h].The number can be expressed as: i - (((i / 10) * 4 + (i / 10)) * 2),in order to compute i%10. Again, i/10 is using the same technique as second number.
 
 Finally, find the sum of all cubic of the above 3 numbers equal to i and print the number. The condition can be expressed as: [esp+18h]^3+[esp+14h]^3+[esp+10h]^3==i.
