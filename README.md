@@ -19,10 +19,10 @@ After compare all the elements in the array, print the value in the array[8], [e
 
 ## Q3:
 The result is 153, 370, 371, 407. In this program the code will loop from 100 to 999, aim to find the number that satisfiy some certain condition.The condition is shown as follows:<br><br>
-Firstly, compute the first element, the number at [esp+18h] is the counter from 100 to 999 divided by 100. The trick is: a/100 =(a*0x51EB851F)>>37，note that 2^37/100=0x51EB851F. because low address already has 32 bit, only shift the top 32 bits to right for 5 bit will compute any a/100.<br><br>
+Firstly, compute the first element, the number at [esp+18h] is the counter from 100 to 999 divided by 100. The trick is: a/100 =(a*0x51EB851F)>>37，note that 2^37*100=0x51EB851F. because low address already has 32 bit, only shift the top 32 bits to right for 5 bit will compute any a/100.<br><br>
 
 Secondly, compute the second element, the number will be store at [esp+14h]. It is compute as: the number at [esp+18h]*-100, then plus the counter which go through between 100 to 999.Then this number will divided by 10. Let counter= i, then  [esp+14h]=([esp+18h]`*`(-100)+i)/10.
- The trick is: a/10 =(a*0x66666667)>>34，note that 2^34/10=0x66666667. Only need to shift 2  bit to right at top 32 bits.
+ The trick is: a/10 =(a*0x66666667)>>34，note that 2^34*10=0x66666667. Only need to shift 2  bit to right at top 32 bits.
 
 Thirdly, compute the thired element, the number will be store at [esp+10h].The number can be expressed as: i - (((i / 10) * 4 + (i / 10)) * 2),in order to compute i%10. Again, i/10 is using the same technique as second number.
 
