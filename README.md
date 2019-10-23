@@ -26,4 +26,4 @@ Secondly, compute the second element, the number will be store at [esp+14h]. It 
 
 Thirdly, compute the thired element, the number will be store at [esp+10h].The number can be expressed as: i - (((i / 10) * 4 + (i / 10)) * 2),in order to compute i%10. Again, i/10 is using the same technique as second number.
 
-Finally, find the sum of all cubic of the above 3 numbers equal to i and print the number. 
+Finally, find the sum of all cubic of the above 3 numbers equal to i and print the number. The condition can be expressed as: [esp+18h]^3+[esp+14h]^3+[esp+10h]^3==i.
