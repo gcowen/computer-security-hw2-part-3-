@@ -26,4 +26,16 @@ Secondly, compute the second element, the number will be store at [esp+14h]. It 
 
 Thirdly, compute the third element, the number will be store at [esp+10h].The number can be expressed as: i - (((i / 10) * 4 + (i / 10)) * 2),in order to compute i%10. Again, i/10 is using the same technique as second number.
 
-Finally, find the sum of all cubic of the above 3 numbers equal to i and print the number. The condition can be expressed as: [esp+18h]^3+[esp+14h]^3+[esp+10h]^3==i.
+Finally, find the sum of all cubic of the above 3 numbers equal to i and print the number. The condition can be expressed as: [esp+18h]^3+[esp+14h]^3+[esp+10h]^3==i.<br>
+
+## Q4:
+The output is 50.The function of this program is to find the last number which choose from 1 to 100 and delete every 7 number. It makes the array similar to a circle that the head is connected to the tail, just keep find the number and delete it as 0 untill the last number's appearence.
+
+The main function is to generate the array from 1 to 100 and the index is from 0 to 99. After the generation complete, 2 values 100 and 7 and one pointer, the head of array will be the argument of the sub-function.
+
+In the sub-function,set 2 variables to compare with  those arugment, Var_c is the index of the array, Var_8 is the counter from 1 to 7.  outer loop is 100 times to find the last number from 1 to 100. Inside the loop, the var_8 will be initialized as 1. 
+Firstly, Using Var_c as the index and arg_0 as the head of array to find the current number. Then estimate whether it is 0 （because every time choose a number, the program will set it to 0 to mark this number has already chosen). If it is 0, the index will keep move forward. If it is not 0, the index still move forward, but the counter that range from 1 to 7 will still plus one.
+
+The index is remainder that is computed from Var_c, the index, divided by 100. Because there are chances that the index will exceed 100 after one single loop. By using remainder, will make the array 100 to be a circle. In this way to find the 7th number except 0 which was picked by previous loop.
+
+If the counter reaches 7, this number will still to be estimated whether it is 0, same to previous step, if it is not 0, this number will be stored at var_10, and set this position to 0 Then keep another loop. when the it comes the 100th loop, only one number in the array will be non-zero, and this number is the ouput.
