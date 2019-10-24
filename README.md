@@ -39,4 +39,4 @@ Firstly, Using Var_c as the index and arg_0 as the head of array to find the cur
 The index is remainder that is computed from Var_c, the index, divided by 100. Because there are chances that the index will exceed 100 after one single loop. By using remainder, will make the array 100 to be a circle. In this way to find the 7th number except 0 which was picked by previous loop.
 
 If the counter reaches 7, this number will still to be estimated whether it is 0, same to previous step, if it is not 0, this number will be stored at var_10, and set this position to 0 Then keep another loop. when the it comes the 100th loop, only one number in the array will be non-zero, and this number is the ouput.
-![](https://github.com/lovethatcat/computer-security-hw2-part-3-/raw/master/HW2Q1/Images/Q4.png)<br><br>
+![](https://github.com/lovethatcat/computer-security-hw2-part-3-/raw/master/HW2Q1/Images/Q4.PNG)<br><br>
